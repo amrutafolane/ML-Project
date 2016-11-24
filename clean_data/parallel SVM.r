@@ -25,5 +25,15 @@ y<- train$status_group
 
 apply(x1, MARGIN = 2, FUN = function(x) sum(is.na(x)))
 
-parallel_svm <- parallelSVM(x1, y , na.action = na.omit)
+x <- x1;
+parallel_svm <- parallelSVM(x, y , 
+                            numberCores = detectCores() - 1, 
+                            samplingSize = 0.2, scale = TRUE, type = NULL, 
+                            kernel = "radial", degree = 3, 
+                            gamma = if (is.vector(x)) 1 else 1/ncol(x), 
+                            coef0 = 0, cost = 1, nu = 0.5, class.weights = NULL, 
+                            cachesize = 40, tolerance = 0.001, epsilon = 0.1, 
+                            shrinking = TRUE, cross = 0, probability = FALSE, 
+                            fitted = TRUE,
+                            na.action = na.omit)
 
