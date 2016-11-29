@@ -1,0 +1,7 @@
+H2O is an open-source, fast, scalable and all around wonderful platform for machine learning. It is Java-based but it has an R interface which I use for the Pump it Up competition. (The caret package is great as well and it contains more models for prediction.)
+
+
+H2O is optimized for doing “in memory” processing of distributed, parallel machine learning algorithms
+
+H20 along with data.table can be used to run parallel algorithms on large datasets.
+
